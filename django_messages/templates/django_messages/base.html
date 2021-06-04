@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'django_messages/css/django_messages.css' %}">
+</head>
+<body>
+    <aside class="aside">
+        <ul class="nav">
+            <a href="{% url 'messages_inbox' %} "><li><i class="fas fa-comments"></i> Ваши сообщения</li></a>
+            <a href="{% url 'messages_outbox' %} "><li><i class="far fa-comments"></i> Отправленные сообщения</li></a>
+            <a href="{% url 'messages_compose' %} "><li><i class="fas fa-plus-square"></i> Новое сообщение</li></a>
+            <a href="{% url 'messages_trash' %} "><li><i class="fas fa-trash-alt"></i> Корзина</li></a>
+        </ul>
+    </aside>
+    <div class="bside">
+        <ul class="reglog">
+            {% if request.user.is_authenticated %}
+            <li class="nol"> {{user.username}}</li><a href="{% url 'logout' %}"> <li class="out">Выйти</li></a></li>
+            {% else %}
+            <a href="{% url 'register' %}"><li class="reg">Регистрация</li></a>
+            <a href="{% url 'login' %}"><li class="log">Войти</li></a>
+            {% endif %}
+        </ul>
+        <ul class="nav">
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a href="{% url 'messages_inbox' %} "><li><i class="fas fa-comments"></i> Чат</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-address-book"></i> Про нас</li></a>
+            <a href="{% url 'contacts' %}"><li><i class="fas fa-id-card-alt"></i> Контакты</li></a>
+        </ul>
+    </div>
+<main>
+    {% block content %}
+
+    {% endblock %}
+</main>
+</body>
+</html>

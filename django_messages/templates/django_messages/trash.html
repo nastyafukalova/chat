@@ -1,0 +1,31 @@
+{% extends "django_messages/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="trash">
+<h1>Удалённые сообщения</h1>
+{% if message_list %}
+<table class="messages">
+    <thead>
+        <tr><th>Отправитель</th><th>Тема</th><th>Дата</th><th>Действия</th></tr>
+    </thead>
+    <tbody>
+{% for message in message_list %}
+    <tr>
+        <td>{{ message.sender|truncatechars:15 }}</td>
+        <td>
+        {{ message.subject|truncatechars:20 }}
+        </td>
+        <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+        <td><a href="{% url 'messages_undelete' message.id %}">востановить</a></td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Нет сообщений</p>
+{% endif %}
+<br/>
+<p>Корзина отчищается автоматически не полагайтесь на эту функцию для длительного хранения.</p>
+{% endblock %}
+</div>

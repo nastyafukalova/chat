@@ -1,0 +1,32 @@
+{% extends "django_messages/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="features">
+<h1>Входящие</h1>
+{% if message_list %}
+<table class="messages">
+    <thead>
+        <tr><th>Отправитель</th><th>Тема</th><th>Получатель</th><th>Действия</th></tr>
+    </thead>
+    <tbody>
+{% for message in message_list %}
+    <tr>
+        <td>{{ message.sender|truncatechars:15 }}</td>
+        <td>
+            {% if message.new %}<strong>{% endif %}
+            {% if message.replied %}<em>{% endif %}
+            <a href="{{ message.get_absolute_url }}">{{ message.subject|truncatechars:20 }}</a>
+            {% if message.replied %}</em>{% endif %}
+            {% if message.new %}</strong>{% endif %}</td>
+        <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+        <td><a href="{% url 'messages_delete' message.id %}">удалить</a></td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Нет сообщений</p>
+{% endif %}
+{% endblock %}
+</div>

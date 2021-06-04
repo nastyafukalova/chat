@@ -1,0 +1,177 @@
+body{
+    background: #b1a296;
+}
+
+.bside{
+    background:#938e94;
+    width:100%;
+    padding:2%;
+    height:200px;
+    color:#fff;
+    border-bottom:5px solid #5d5c61;
+}
+
+aside{
+    float:left;
+    background:#938e94;
+    width:20%;
+    padding:2.5%;
+    height:100vh;
+    color:#fff;
+    border-right:5px solid #5d5c61;
+}
+
+.bside img{
+    width:150px;
+    float:right;
+    margin-top:-30px;
+}
+
+aside .logo{
+    float:right;
+    font-size:50px;
+    margin-left:10px;
+    font-weight: bold;
+}
+
+aside .nav {
+    list-style: none;
+    float:left;
+    font-size: 30px;
+}
+
+aside .nav li {
+    float:right;
+    color:#fff;
+    display:inline-block;
+    margin-top:20px;
+    margin-left:20px;
+    transition:transform .6s ease;
+}
+
+aside .nav li:hover, aside .nav a:hover{
+    color:#557a95;
+    text-decoration: none;
+    transform:scale(1.05);
+}
+
+.bside .nav {
+    list-style: none;
+    float:left;
+    font-size: 30px;
+}
+
+.bside .nav li {
+    float:right;
+    color:#fff;
+    display:inline-block;
+    margin-top:20px;
+    margin-left:20px;
+    transition:transform .6s ease;
+}
+
+.bside .nav li:hover, aside .nav a:hover{
+    color:#557a95;
+    text-decoration: none;
+    transform:scale(1.05);
+}
+
+.bside .reglog {
+    list-style: none;
+    float:right;
+    font-size: 30px;
+}
+.bside .reglog li{
+    float:right;
+    color:#fff;
+    display:inline-block;
+    margin-top:20px;
+    margin-left:20px;
+    transition:transform .6s ease;
+}
+
+.bside .reglog li:hover, aside .reglog a:hover{
+    color:#557a95;
+    text-decoration: none;
+    transform:scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    width: 80%;
+}
+
+main .about{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+main .btn-danger{
+    margin-top: 100px;
+    font-size:28px;
+}
+
+main .btn-warning{
+    color:#000;
+    font-size:28px;
+    margin-top: 20px;
+}
+
+main p{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 95%;
+    text-align: left;
+}
+
+main .naz{
+    font-size: 23px;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 95%;
+    text-align: center;
+}
+
+.form-input {
+    margin-top:10px;
+    margin-left:10px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    margin-left:10px;
+    margin-top:10px;
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding:0;
+    color: #CC0000;
+}
+
+main .reg-button{
+    margin-left:10px;
+}
+
+.trash{
+    display:inline-block;
+    color:#fff;
+    padding:20px;
+}
+
+.newmessage{
+    display:inline-block;
+    color:#fff;
+    padding:20px;
+}
